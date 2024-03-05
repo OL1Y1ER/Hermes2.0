@@ -1,23 +1,35 @@
 const int pin = 8;
-
+const int frequency = 50;
 void setup() {
   // put your setup code here, to run once:
-pinMode(pin, OUTPUT);
-Serial.begin(9600);
-Sync();
+  pinMode(pin, OUTPUT);
+  Serial.begin(9600);
+  Sync();
 
 
 }
 
 void loop() {
-  pinMode(pin, INPUT);
-  delay(500);
-  Serial.print(digitalRead(pin));
+  
+  Output();
  
 }
 
 void Sync(){
   digitalWrite(pin, HIGH);
-  delay(500);
+  delay(frequency);
   digitalWrite(pin, LOW);
+  pinMode(pin, INPUT);
+}
+
+
+//Format of Input?
+String Output(){
+  delay(frequency);
+  //Serial.print(digitalRead(pin)); //For printing out
+  return Reformat(digitalRead(pin));
+
+}
+String Reformat(String data){
+  return data;
 }

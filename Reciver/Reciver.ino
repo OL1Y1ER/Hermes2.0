@@ -1,9 +1,9 @@
 const int pin = 8;
-const int frequency = 50;
+const int frequency = 23;
 void setup() {
   // put your setup code here, to run once:
   pinMode(pin, OUTPUT);
-  Serial.begin(9600);
+  Serial.begin(2000000);
   Sync();
 
 
@@ -22,14 +22,17 @@ void Sync(){
   pinMode(pin, INPUT);
 }
 
-
+int counting =0;
 //Format of Input?
 String Output(){
   delay(frequency);
-  //Serial.print(digitalRead(pin)); //For printing out
-  return Reformat(digitalRead(pin));
+ 
+  Serial.print(digitalRead(pin)); //For printing out
+  //return Reformat(digitalRead(pin));
 
 }
+/*
 String Reformat(String data){
   return data;
 }
+*/

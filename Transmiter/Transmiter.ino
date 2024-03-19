@@ -8,19 +8,22 @@ bool stopp = false;
 
 void setup() {
   pinMode(pin, INPUT);
-  Serial.begin(9600);
+  Serial.begin(2000000);
 }
 
+int testData[] = {2};
 void loop() {
   if(diffTime == 0){
     Sync();
   }
   else{
-    SendingMessages();   
+    SendingMessages(testData);   
   }  
 }
 
-void SendingMessages(){//int text[]){
+
+
+void SendingMessages(int text[]){
   /*
   delay(diffTime);
   digitalWrite(pin, HIGH);
@@ -28,6 +31,17 @@ void SendingMessages(){//int text[]){
   digitalWrite(pin, LOW);
   */
   //8bit Sending info
+   //Teszing sending some info
+  for(int i = 0; i < 2; i++){
+    for(int j = 0; j < testData[i]; j++){
+      delay(diffTime);
+      digitalWrite(pin, HIGH);
+      
+    }
+    delay(diffTime);
+    digitalWrite(pin, LOW);
+    
+  }
    
 }
 
@@ -43,8 +57,4 @@ void Sync(){
     pinMode(pin,OUTPUT);
     stopp = false;
   }
-}
-
-int ConvertIntoBinnary[](){
- 
 }

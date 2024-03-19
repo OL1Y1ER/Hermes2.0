@@ -20,11 +20,15 @@ void loop() {
   }  
 }
 
-void SendingMessages(){
+void SendingMessages(){//int text[]){
+  /*
   delay(diffTime);
   digitalWrite(pin, HIGH);
   delay(diffTime);
   digitalWrite(pin, LOW);
+  */
+  //8bit Sending info
+   
 }
 
 
@@ -39,4 +43,8 @@ void Sync(){
     pinMode(pin,OUTPUT);
     stopp = false;
   }
+}
+
+int ConvertIntoBinnary[](){
+ 
 }

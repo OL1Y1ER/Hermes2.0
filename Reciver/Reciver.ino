@@ -1,5 +1,5 @@
 const int pin = 8;
-const int frequency = 23;
+const int frequency = 25;
 void setup() {
   // put your setup code here, to run once:
   pinMode(pin, OUTPUT);
